@@ -18,6 +18,7 @@ const getCards = async () => {
     longitude: card.longitude,
     timezone: card.timezone,
     countryCode: card.country_code,
+    country: card.country,
     admin1: card.admin1,
     admin2: card.admin2,
     admin3: card.admin3,
