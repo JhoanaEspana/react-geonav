@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { CardItem } from './CardItem';
 
 const getCards = async () => {
-  const URL =
-    'https://geocoding-api.open-meteo.com/v1/search?name=new%20york&count=100';
+  const URL ='https://geocoding-api.open-meteo.com/v1/search?name=new%20york&count=100';
   const resp = await fetch(URL);
   const data = await resp.json();
 
@@ -18,6 +17,7 @@ const getCards = async () => {
     longitude: card.longitude,
     timezone: card.timezone,
     countryCode: card.country_code,
+    featureCode: card.feature_code,
     country: card.country,
     admin1: card.admin1,
     admin2: card.admin2,
