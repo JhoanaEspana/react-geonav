@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color-primary: #43AF92;
+  --color-secondary: #F9A347;
+  --color-secondary-dark: #f98b47;
+  --color-text: #0F1130;
+  --color-textlight: #606176;
+}
+
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 32px;
+}
+
+a{
+  text-decoration: none;
+}
