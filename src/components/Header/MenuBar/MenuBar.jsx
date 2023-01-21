@@ -1,32 +1,29 @@
-import React from 'react';
-import { useRef } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaStream } from "react-icons/fa";
 import logo from '../../../assets/logoapp.svg';
 import './MenuBar.css';
 
 const MenuBar = () => {
-  const navRef = useRef();
+  const [menuActive, setMenuActive] = useState(false);
 
-  const showNavbar = () => {
-    navRef.current.classList.toggle('responsive_nav');
+  const handleClick = () => {
+    setMenuActive(!menuActive);
   };
 
   return (
-      <header>
-        <img src={logo} alt="logo" />
-        <nav ref={navRef}>
-          <a href="/#">Home</a>
-          <a href="/#">About us</a>
-          <a href="/#">Contact</a>
-          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-            <FaTimes />
-          </button>
-        </nav>
-        <button className="nav-btn" onClick={showNavbar}>
-          <FaBars />
-        </button>
-      </header>
+    <header className="menu-bar">
+      <img src={logo} alt="logo" />
+      <nav className={`menu-bar-nav ${menuActive ? 'active' : ''}`}>
+        <a href="/#">Home</a>
+        <a href="/#">About us</a>
+        <a href="/#">Contact</a>
+      </nav>
+      <button className="menu-button" onClick={handleClick}>
+        <FaStream />
+      </button>
+    </header>
   );
 };
 
 export default MenuBar;
+

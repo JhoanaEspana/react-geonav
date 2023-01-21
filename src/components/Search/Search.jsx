@@ -5,6 +5,7 @@ export const Search = ({ cards }) => {
   const [featureCode, setFeatureCode] = useState();
   const [countryCode, setCountryCode] = useState();
 
+
   const options = cards.map((card) => ({
     value: card.featureCode,
     label: card.featureCode,

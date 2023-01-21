@@ -26,7 +26,6 @@ const getCards = async () => {
     admin3: card.admin3,
   }));
 
-  // console.log(cards);
   return cards;
 };
 

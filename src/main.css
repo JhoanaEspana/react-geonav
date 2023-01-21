@@ -14,11 +14,10 @@
   --color-textlight: #606176;
 }
 
-html,
 body {
-  display: flex;
+ /*  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   font-family: 'Roboto', sans-serif;
 }
 
