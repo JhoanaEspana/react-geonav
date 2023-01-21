@@ -69,15 +69,17 @@ export const CardGrid = () => {
   return (
     <section>
       <div className="search-content">
-      <h3>filter your options by: Feature Code or Country Code</h3>
+        <h3>filter your options by: Feature Code or Country Code</h3>
         <div className="search-content-select">
-          <Select className='select'
+          <Select
+            className="select"
             options={options}
             value={featureCode}
             onChange={(selectedOption) => setFeatureCode(selectedOption)}
             placeholder="Feature Code"
           />
-          <Select className='select'
+          <Select
+            className="select"
             options={options2}
             value={countryCode}
             onChange={(selectedOption) => setCountryCode(selectedOption)}
