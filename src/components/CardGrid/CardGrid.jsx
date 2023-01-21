@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Search } from '../Search/Search';
 import { CardItem } from './CardItem';
 
 const getCards = async () => {
-  const URL ='https://geocoding-api.open-meteo.com/v1/search?name=new%20york&count=100';
+  const URL =
+    'https://geocoding-api.open-meteo.com/v1/search?name=new%20york&count=100';
   const resp = await fetch(URL);
   const data = await resp.json();
 
@@ -39,6 +41,9 @@ export const CardGrid = () => {
 
   return (
     <section>
+      <div>
+        <Search cards={cards} />
+      </div>
       <div>
         {cards.map((card) => (
           <CardItem key={card.id} {...card} />
