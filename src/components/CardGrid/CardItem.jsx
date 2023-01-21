@@ -69,6 +69,7 @@ export const CardItem = ({
       </div>
       <div>
         <h2>{name}</h2>
+        <p>feature Code: {featureCode}</p>
         <p>latitude: {latitude}</p>
         <p>longitude: {longitude}</p>
         <p>HIERARCHICAL ADMINISTRATIVE AREAS: {admin1} {admin2} {admin3}</p>

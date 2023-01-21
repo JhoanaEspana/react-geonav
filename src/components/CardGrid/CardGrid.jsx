@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { Search } from '../Search/Search';
+import { useEffect, useState } from 'react';
 import { CardItem } from './CardItem';
+import Select from 'react-select';
+import './CardGrid.css';
 
 const getCards = async () => {
   const URL =
@@ -9,10 +9,7 @@ const getCards = async () => {
   const resp = await fetch(URL);
   const data = await resp.json();
 
-  const datas = data.results;
-  // console.log(datas);
-
-  const cards = datas.map((card) => ({
+  const cards = data.results.map((card) => ({
     id: card.id,
     name: card.name,
     latitude: card.latitude,
@@ -31,6 +28,8 @@ const getCards = async () => {
 
 export const CardGrid = () => {
   const [cards, setCards] = useState([]);
+  const [featureCode, setFeatureCode] = useState();
+  const [countryCode, setCountryCode] = useState();
 
   useEffect(() => {
     getCards().then((data) => {
@@ -38,13 +37,54 @@ export const CardGrid = () => {
     });
   }, []);
 
+  const options = [...new Set(cards.map((card) => card.featureCode))].map(
+    (featureCode) => ({
+      value: featureCode,
+      label: featureCode,
+    })
+  );
+
+  const options2 = [...new Set(cards.map((card) => card.countryCode))].map(
+    (countryCode) => ({
+      value: countryCode,
+      label: countryCode,
+    })
+  );
+
+  const filteredCards = cards.filter((card) => {
+    if (featureCode && countryCode) {
+      return (
+        card.featureCode === featureCode.value &&
+        card.countryCode === countryCode.value
+      );
+    } else if (featureCode) {
+      return card.featureCode === featureCode.value;
+    } else if (countryCode) {
+      return card.countryCode === countryCode.value;
+    } else {
+      return true;
+    }
+  });
+
   return (
     <section>
-      <div>
-        <Search cards={cards} />
+      <div className="search">
+        <Select
+          options={options}
+          value={featureCode}
+          onChange={(selectedOption) => setFeatureCode(selectedOption)}
+          placeholder="Feature Code"
+        />
+        <Select
+          options={options2}
+          value={countryCode}
+          onChange={(selectedOption) => setCountryCode(selectedOption)}
+          placeholder="Country Code"
+        />
       </div>
+
       <div>
-        {cards.map((card) => (
+        {filteredCards.map((card) => (
           <CardItem key={card.id} {...card} />
         ))}
       </div>
