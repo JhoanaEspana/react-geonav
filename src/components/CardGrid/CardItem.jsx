@@ -58,7 +58,7 @@ export const CardItem = ({
           <Marker position={[latitude, longitude]}>
             <Popup>
               <p>{country}</p>
-              <p>latitude: {latitude}</p>
+              <p> latitude: {latitude}</p>
               <p>longitude: {longitude}</p>
             </Popup>
           </Marker>
