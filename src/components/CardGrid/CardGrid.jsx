@@ -68,22 +68,24 @@ export const CardGrid = () => {
 
   return (
     <section>
-      <div className="search">
-        <Select
-          options={options}
-          value={featureCode}
-          onChange={(selectedOption) => setFeatureCode(selectedOption)}
-          placeholder="Feature Code"
-        />
-        <Select
-          options={options2}
-          value={countryCode}
-          onChange={(selectedOption) => setCountryCode(selectedOption)}
-          placeholder="Country Code"
-        />
+      <div className="search-content">
+        <div className="search-content-select">
+          <Select className='select'
+            options={options}
+            value={featureCode}
+            onChange={(selectedOption) => setFeatureCode(selectedOption)}
+            placeholder="Feature Code"
+          />
+          <Select className='select'
+            options={options2}
+            value={countryCode}
+            onChange={(selectedOption) => setCountryCode(selectedOption)}
+            placeholder="Country Code"
+          />
+        </div>
       </div>
 
-      <div>
+      <div className="card-grid-content">
         {filteredCards.map((card) => (
           <CardItem key={card.id} {...card} />
         ))}

@@ -1,5 +1,6 @@
 import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import './CardItem.css'
 import PRK from '../../assets/PRK.svg';
 import AIRF from '../../assets/AIRF.svg';
 import AIRH from '../../assets/AIRH.svg';
@@ -41,15 +42,16 @@ export const CardItem = ({
   };
 
   return (
-    <div>
-      <div className="map">
+    <div className="card-item-container">
+      <div className="card-item-map">
         <MapContainer
-          style={{ width: '50%', height: '50vh' }}
+          style={{ width: '40vh', height: '40vh' }}
           zoom={13}
           center={[latitude, longitude]}
           scrollWheelZoom={false}
           fadeAnimation={true}
-          markerZoomAnimation={true}
+          dragging={false}
+          markerZoomAnimation={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -64,10 +66,10 @@ export const CardItem = ({
           </Marker>
         </MapContainer>
       </div>
-      <div>
+      <div className="card-item-ico">
         <img src={getSvg(featureCode)} alt="img" />
       </div>
-      <div>
+      <div className="card-item-info">
         <h2>{name}</h2>
         <p>feature Code: {featureCode}</p>
         <p>latitude: {latitude}</p>

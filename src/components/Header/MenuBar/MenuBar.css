@@ -4,7 +4,6 @@
   justify-content: space-between;
   padding: 10px;
   background-color: #fff;
-  box-shadow: 0px 2px 5px #ccc;
 }
 
 .menu-bar img {
@@ -34,7 +33,7 @@
 }
 
 .menu-button svg {
-  fill: #000;
+  fill: var(--color-text);
   width: 30px;
   height: 30px;
 }
@@ -45,14 +44,13 @@
   top: 60px;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: #f6f6f6;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  box-shadow: 0px 2px 5px #ccc;
-/*   overflow-y: scroll; */
 
-  
+
+  transition: all 0.5s ease-in-out;
 }
 
 /* Responsive */
