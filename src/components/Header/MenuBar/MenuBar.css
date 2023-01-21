@@ -6,6 +6,10 @@
   background-color: #fff;
 }
 
+.header-menu-bar{
+
+}
+
 .menu-bar img {
   height: 40px;
 }
@@ -60,5 +64,12 @@
   }
   .menu-button {
     display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-menu-bar {
+    width: 900px;
+    margin: 0 auto;
   }
 }

@@ -11,16 +11,18 @@ const MenuBar = () => {
   };
 
   return (
-    <header className="menu-bar">
-        <img src={logo} alt="logo" />
-        <nav className={`menu-bar-nav ${menuActive ? 'active' : ''}`}>
-          <a href="/#">Home</a>
-          <a href="/#">About us</a>
-          <a href="/#">Contact</a>
-        </nav>
-        <button className="menu-button" onClick={handleClick}>
-          <FaStream />
-        </button>
+    <header className="header-menu-bar">
+        <div className="menu-bar">
+          <img src={logo} alt="logo" />
+          <nav className={`menu-bar-nav ${menuActive ? 'active' : ''}`}>
+            <a href="/#">Home</a>
+            <a href="/#">About us</a>
+            <a href="/#">Contact</a>
+          </nav>
+          <button className="menu-button" onClick={handleClick}>
+            <FaStream />
+          </button>
+        </div>
     </header>
   );
 };

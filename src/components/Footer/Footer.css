@@ -1,14 +1,15 @@
 footer {
   background-color: #f5f5f5;
-  padding: 80px 20px;
+  padding: 20px 20px;
   text-align: center;
-
+  margin-top: 100px;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 40px 0;
   flex-direction: column;
   gap: 20px;
 }
@@ -34,4 +35,23 @@ ul {
 h4 {
   margin-bottom: 15px;
   color: var(--color-text);
+}
+
+.copyright{
+  margin-top: 20px;
+  border-top: 1px solid #d5d5d5;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .footer-container{
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-container{
+    width: 900px;
+    margin: 0 auto;
+  }
 }

@@ -1,12 +1,12 @@
 import './Footer.css';
-import logo from '../../assets/logoapp.svg';
+import logoInalambria from '../../assets/inalambria.png';
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
         <div className="footer-logo">
-          <img src={logo} alt="logo" />
+          <img src={logoInalambria} alt="logo inalambria" />
         </div>
         <div className="footer-links">
         <h4>Menu</h4>
@@ -25,6 +25,9 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+        <div className="copyright">
+          <p>Copyright <a href="https://github.com/JhoanaEspana" target="_blank">@JhoEspana</a> 2023 All rights reserved.</p>
+        </div>
     </footer>
   );
 };
