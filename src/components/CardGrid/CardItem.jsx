@@ -1,6 +1,7 @@
+import { FaMapMarkerAlt, FaRegBuilding } from "react-icons/fa";
 import { MapContainer, Marker, TileLayer, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import './CardItem.css'
+import './CardItem.css';
 import PRK from '../../assets/PRK.svg';
 import AIRF from '../../assets/AIRF.svg';
 import AIRH from '../../assets/AIRH.svg';
@@ -45,7 +46,8 @@ export const CardItem = ({
     <div className="card-item-container">
       <div className="card-item-map">
         <MapContainer
-          style={{ width: '40vh', height: '40vh' }}
+          className="map-container"
+          style={{ width: '90%', height: '300px' }}
           zoom={13}
           center={[latitude, longitude]}
           scrollWheelZoom={false}
@@ -71,11 +73,14 @@ export const CardItem = ({
       </div>
       <div className="card-item-info">
         <h2>{name}</h2>
-        <p>feature Code: {featureCode}</p>
-        <p>latitude: {latitude}</p>
-        <p>longitude: {longitude}</p>
-        <p>HIERARCHICAL ADMINISTRATIVE AREAS: {admin1} {admin2} {admin3}</p>
-        <p>country: {countryCode} {country}</p>
+        <div className="card-item-pin">
+          <p><FaMapMarkerAlt /><b>latitude:</b> {latitude}</p>
+          <p><FaMapMarkerAlt /><b>longitude:</b> {longitude}</p>
+        </div>
+        <p className="text-small"> <FaRegBuilding />
+        <b><span>HIERARCHICAL ADMINISTRATIVE AREAS:</span></b><br/>{admin1} {admin2} {admin3}</p>
+        <p><b>Country:</b> <span className="countryCode">{countryCode}</span> {country}</p>
+        <p><b>Feature Code:</b> {featureCode}</p>
       </div>
     </div>
   );

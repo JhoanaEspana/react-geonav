@@ -69,6 +69,7 @@ export const CardGrid = () => {
   return (
     <section>
       <div className="search-content">
+      <h3>filter your options by: Feature Code or Country Code</h3>
         <div className="search-content-select">
           <Select className='select'
             options={options}

@@ -1,5 +1,10 @@
 .search-content{
-  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
   margin-bottom: 80px;
   background: rgba(67, 175, 146, 0.1);
   background-image: url(../../assets/background-search.png);
@@ -9,9 +14,18 @@
 }
 
 .select{
-  margin: 40px;
+  margin: 20px;
+  width: -webkit-fill-available;
 }
 
 .card-grid-content{
   padding: 0 20px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.search-content-select{
+  width: -webkit-fill-available;
 }
