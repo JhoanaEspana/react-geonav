@@ -95,7 +95,7 @@ export const CardGrid = () => {
           <CardItem key={card.id} {...card} />
         ))}
         {cardsToShow.length < filteredCards.length &&
-        (<button className='button-card-grid' onClick={() => setShowMore(true)}>Mostrar más</button>)}
+        (<button className='button-card-grid' onClick={() => setShowMore(true)}>See More</button>)}
       </div>
     </section>
   );
