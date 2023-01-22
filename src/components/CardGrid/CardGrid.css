@@ -30,6 +30,23 @@
   width: -webkit-fill-available;
 }
 
+.button-card-grid {
+  width: 150px;
+  height: 50px;
+  background-color: var(--color-secondary);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  margin: 20px 0;
+}
+
+.button-card-grid:hover {
+  background-color: var(--color-secondary-dark);
+}
+
 /* Responsive */
 @media (min-width: 768px) {
   .search-content-select {

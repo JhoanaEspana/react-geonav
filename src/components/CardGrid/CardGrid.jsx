@@ -30,6 +30,7 @@ export const CardGrid = () => {
   const [cards, setCards] = useState([]);
   const [featureCode, setFeatureCode] = useState();
   const [countryCode, setCountryCode] = useState();
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     getCards().then((data) => {
@@ -54,8 +55,7 @@ export const CardGrid = () => {
   const filteredCards = cards.filter((card) => {
     if (featureCode && countryCode) {
       return (
-        card.featureCode === featureCode.value &&
-        card.countryCode === countryCode.value
+        card.featureCode === featureCode.value && card.countryCode === countryCode.value
       );
     } else if (featureCode) {
       return card.featureCode === featureCode.value;
@@ -65,6 +65,8 @@ export const CardGrid = () => {
       return true;
     }
   });
+
+  const cardsToShow = showMore ? filteredCards : filteredCards.slice(0, 9);
 
   return (
     <section>
@@ -89,9 +91,11 @@ export const CardGrid = () => {
       </div>
 
       <div className="card-grid-content">
-        {filteredCards.map((card) => (
+        {cardsToShow.map((card) => (
           <CardItem key={card.id} {...card} />
         ))}
+        {cardsToShow.length < filteredCards.length &&
+        (<button className='button-card-grid' onClick={() => setShowMore(true)}>Mostrar más</button>)}
       </div>
     </section>
   );
