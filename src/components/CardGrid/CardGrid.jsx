@@ -55,7 +55,8 @@ export const CardGrid = () => {
   const filteredCards = cards.filter((card) => {
     if (featureCode && countryCode) {
       return (
-        card.featureCode === featureCode.value && card.countryCode === countryCode.value
+        card.featureCode === featureCode.value &&
+        card.countryCode === countryCode.value
       );
     } else if (featureCode) {
       return card.featureCode === featureCode.value;
@@ -91,11 +92,20 @@ export const CardGrid = () => {
       </div>
 
       <div className="card-grid-content">
+        {filteredCards.length === 0 && (
+          <div className="no-results">No results found</div>
+        )}
         {cardsToShow.map((card) => (
           <CardItem key={card.id} {...card} />
         ))}
-        {cardsToShow.length < filteredCards.length &&
-        (<button className='button-card-grid' onClick={() => setShowMore(true)}>See More</button>)}
+        {cardsToShow.length < filteredCards.length && (
+          <button
+            className="button-card-grid"
+            onClick={() => setShowMore(true)}
+          >
+            See More
+          </button>
+        )}
       </div>
     </section>
   );

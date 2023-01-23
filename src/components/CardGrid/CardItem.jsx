@@ -45,6 +45,7 @@ export const CardItem = ({
   return (
     <div className="card-item-container">
       <div className="card-item-map">
+      
         <MapContainer
           className="map-container"
           style={{ width: '90%', height: '300px' }}
